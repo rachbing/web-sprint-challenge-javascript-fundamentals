@@ -165,13 +165,12 @@ function greeting(firstName, lastName) {
 /* 🐴🐴🐴 Step 1: Base Constructor 🐴🐴🐴
  Use the constructor function named CuboidMaker to accept properties for length, width, and height which can be initialized as an object
 */
-class CuboidMaker{
-  constructor(atr) {
+function CuboidMaker(atr) {
   this.length = atr.length;
   this.width = atr.width;
   this.height = atr.height;
 } 
-}
+
 
 
 /* 🐴🐴🐴 Step 2: Volume Method 🐴🐴🐴
@@ -205,25 +204,39 @@ const cuboid = new CuboidMaker({
   width: 5,
   height: 5
 });
-
+console.log(cuboid)
 
 
 // 🐴🐴🐴 Test your volume and surfaceArea methods by uncommenting the logs below: 🐴🐴🐴
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
-// console.log(cuboid.volume()); // 100
-// console.log(cuboid.surfaceArea()); // 130
+console.log(cuboid.volume()); // 100
+console.log(cuboid.surfaceArea()); // 130
  
 
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
 //🦄🦄🦄 1. Take your prototypes from above and refactor into class syntax. Please rename your class CuboidMakerTwo and your object cuboidTwo 🦄🦄🦄
 class CuboidMakerTwo{
-
+  constructor (twoAtr){
+    this.length = twoAtr.length;
+    this.width = twoAtr.width;
+    this.height = twoAtr.height;
+  } volume() {
+    return this.length * this.width * this.height
+  } surfaceArea() {
+    return 2 * (this.length * this.width + this.length * this.height + this.width * this.height)
+  }
 }
+
+const cuboidTwo = new CuboidMakerTwo({
+  length: 4,
+  width: 5,
+  height: 5
+});
 
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
-// console.log(cuboidTwo.volume()); // 100
-// console.log(cuboidTwo.surfaceArea()); // 130
+console.log(cuboidTwo.volume()); // 100
+console.log(cuboidTwo.surfaceArea()); // 130
 
 
 
